@@ -1,0 +1,181 @@
+		body {
+			padding: 0px;
+			margin: 0px;
+			color:rgb(50,50,50);
+   			font-family: 'Roboto', sans-serif;
+            /*font-family: 'Lucida Console';*/
+		}
+        h1 {
+            font-family: 'Lobster', cursive;
+            text-decoration: underline;
+            /*font-family: 'Lucida Console';*/
+        }
+		header {
+			display: block;
+			height: 10vh;
+			background-color: rgb(100,50,150);
+			z-index: 2;
+			background-position: right;
+			background-image: url('./assets/header.png');
+			background-size: 50%;
+    		background-repeat: repeat-x;
+		}
+		nav {
+			z-index: 1;
+			display: flex;
+			background-color: white;
+			min-height: 150px;
+			box-shadow: 0 0 20px rgb(50,50,50);
+			border-bottom: 2px solid black;
+			margin-bottom: 0px;
+		}
+		nav-item {
+			display: inline-block;
+			background-color: white;
+			height: 150px;
+			min-width: 150px;
+			width: 33%;
+			cursor: pointer;
+			border-bottom: 4px solid white;
+		}
+		nav-item:hover{
+			background-color: white;
+			border-bottom: 4px solid gray;
+		}
+		nav-item:active, .nav-item-active {
+			border-bottom: 4px solid rgb(100,50,150);
+		}
+		.nav-img {
+			display: block;
+			height:150px;
+			width: 150px;
+			margin: auto;
+		}
+		.nav-code-img {
+			order: 0;
+			height: 150px;
+			width: 150px;
+			background: url('./assets/code.png');
+			background-size: 150px 150px;
+		}
+		.nav-code-img:hover, .nav-code-img-active {
+			background: url('./assets/code_inv.png');
+			background-size: 150px 150px;
+		}
+		.nav-face-img {
+			order: 1;
+			height: 150px;
+			width: 150px;
+			background: url('./assets/face.png');
+			background-size: 150px 150px;
+		}
+		.nav-face-img:hover, .nav-face-img-active {
+			background: url('./assets/face_inv.png');
+			background-size: 150px 150px;
+		}
+		.nav-draw-img {
+			order: 2;
+			height: 150px;
+			width: 150px;
+			background: url('./assets/draw.png');
+			background-size: 150px 150px;
+		}
+		.nav-draw-img:hover, .nav-draw-img-active {
+			background: url('./assets/draw_inv.png');
+			background-size: 150px 150px;
+		}
+
+		.content {
+			display: block;
+			background-color: white;
+			display: flex;
+		}
+		.content > h1 {
+			padding: 0px;
+			margin: 0px;
+		}
+		.mid-content {
+			background-color: lightgray;
+			height: 1000px;
+		}
+		.lower-content {
+			background-color: hotpink;
+			height: 1000px;
+		}
+		.right-content {
+			order: 1;
+			width: 30%;
+			display: flex;
+			flex-direction: column;
+			background-color: lightgray;
+			background-image: url('./assets/side.png');
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+			padding-left: 20px;
+			color: white;
+		}
+		.left-content {
+			order: 0;
+			width: 69%;
+			height: 100%;
+			display: inline-block;
+			background-color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+		}
+		@media (max-width: 600px){
+			nav-item {
+				width: 100%;
+			}
+			nav {
+				flex-direction: column;
+			}
+			.content {
+				flex-direction: column;
+			}
+			.left-content {
+				width: 100%;
+			}
+			.right-content {
+				width: 100%;
+			}
+			.edge-dummy {
+				display: none !important;
+			}
+		}		
+		#edge {
+			position: absolute; 
+			right:0px; 
+			margin-top: -1px;
+		}
+		#edge-gray {
+			position: relative; 
+			margin-top: -120px;
+			float: right;
+		}
+		.edge-dummy {
+			height: 100px;
+			display: block;
+		}
+        h3 {
+            color: rgb(100,50,150);
+        }
+		.right-content > h3 {
+			margin-bottom: 0px;
+			margin-top: 0px;
+			color: lightblue;
+			font-weight: bold;
+		}
+		ul {
+			list-style-type: circle;
+		}
+		li {
+		}
+        i {
+            color:rgb(100,50,150);
+        }
+        a {
+            color: darkblue;
+            font-family: 'Lucida Console';
+        }

@@ -3,212 +3,130 @@
 <head>
 	<title>jojahn@github</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<style>
-		body {
-			padding: 0px;
-			margin: 0px;
-			color:rgb(50,50,50);
-   			font-family: 'Roboto', sans-serif;
-		}
-		header {
-			display: block;
-			height: 10vh;
-			background-color: rgb(100,50,150);
-			z-index: 2;
-			background-position: right;
-			background-image: url('./header.png');
-			background-size: 50%;
-    		background-repeat: repeat-x; /* for vertical repeat */
-		}
-		nav {
-			z-index: 1;
-			display: flex;
-			background-color: white;
-			min-height: 150px;
-			box-shadow: 0 0 20px rgb(50,50,50);
-			border-bottom: 2px solid black;
-			margin-bottom: 0px;
-		}
-		nav-item {
-			display: inline-block;
-			background-color: white;
-			height: 150px;
-			min-width: 150px;
-			width: 33%;
-			cursor: pointer;
-			border-bottom: 2px solid white;
-		}
-		nav-item:hover{
-			background-color: white;
-			border-bottom: 2px solid gray;
-		}
-		nav-item:active {
-			border-bottom: 4px solid darkblue;
-		}
-		.nav-img {
-			display: block;
-			height:150px;
-			width: 150px;
-			margin: auto;
-		}
-		.nav-code-img {
-			order: 0;
-			height: 150px;
-			width: 150px;
-			background: url('./code.png');
-			background-size: 150px 150px;
-		}
-		.nav-code-img:hover {
-			background: url('./code_inv.png');
-			background-size: 150px 150px;
-		}
-		.nav-face-img {
-			order: 1;
-			height: 150px;
-			width: 150px;
-			background: url('./face.png');
-			background-size: 150px 150px;
-		}
-		.nav-face-img:hover {
-			background: url('./face_inv.png');
-			background-size: 150px 150px;
-		}
-		.nav-draw-img {
-			order: 2;
-			height: 150px;
-			width: 150px;
-			background: url('./code.png');
-			background-size: 150px 150px;
-		}
-		.nav-draw-img:hover {
-			background: url('./code_inv.png');
-			background-size: 150px 150px;
-		}
-
-		.content {
-			display: block;
-			background-color: white;
-			display: flex;
-		}
-		.content > h1 {
-			padding: 0px;
-			margin: 0px;
-		}
-		.mid-content {
-			background-color: lightgray;
-			height: 1000px;
-		}
-		.lower-content {
-			background-color: hotpink;
-			height: 1000px;
-		}
-		.right-content {
-			order: 1;
-			width: 30%;
-			display: flex;
-			flex-direction: column;
-			background-color: lightgray;
-			background-image: url('./side.png');
-			height: 100%;
-			margin: 0px;
-			padding: 0px;
-			padding-left: 20px;
-			color: white;
-		}
-		.left-content {
-			order: 0;
-			width: 69%;
-			height: 100%;
-			display: inline-block;
-			background-color: white;
-		}
-		@media (max-width: 600px){
-			nav-item {
-				width: 100%;
-			}
-			nav {
-				flex-direction: column;
-			}
-			.content {
-				flex-direction: column;
-			}
-			.left-content {
-				width: 100%;
-			}
-			.right-content {
-				width: 100%;
-			}
-			.edge-dummy {
-				display: none !important;
-			}
-		}		
-		#edge {
-			position: absolute; 
-			right:0px; 
-			margin-top: -1px;
-		}
-		#edge-gray {
-			position: relative; 
-			margin-top: -120px;
-			float: right;
-		}
-		.edge-dummy {
-			height: 100px;
-			display: block;
-		}
-		h3 {
-			margin-bottom: 0px;
-			margin-top: 0px;
-			color: lightblue;
-			font-weight: bold;
-		}
-		ul {
-			list-style-type: circle;
-		}
-		li {
-		}
-
-	</style>
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="./script.js"></script>
 </head>
-<body>
+<body ng-app="app" ng-controller="ctrl">
 	<header></header>
+
 	<nav>
-		<nav-item><div class="nav-img nav-code-img"></div></nav-item>
-		<nav-item><div class="nav-img nav-face-img"></div></nav-item>
-		<nav-item><div class="nav-img nav-draw-img"></div></nav-item>
+		<nav-item ng-click="condRendVar = 0">
+			<div  ng-class="{true:'nav-img nav-code-img nav-code-img-active',false:'nav-img nav-code-img'}[condRendVar == 0]"></div>
+		</nav-item>
+		<nav-item ng-click="condRendVar = 1" ng-class="{true='nav-item-active',false:'nav-item-active'}[condRendVar == 1]">
+			<div ng-class="{true:'nav-img nav-face-img nav-face-img-active',false:'nav-img nav-face-img'}[condRendVar == 1]"></div>
+		</nav-item>
+		<nav-item ng-click="condRendVar = 2"><div class="nav-img nav-draw-img"></div></nav-item>
 	</nav>
-	<div class="content mid-content">
-		<div class="left-content">
-			<h1>jojahn</h1>
-			<p>make projects</p>
-			<img id="edge-gray" src="./edge_gray_small.png" height="100" width="100" alt="edge"/>
+
+	<div ng-if="condRendVar == 0">
+		<div class="content mid-content">
+			<div class="left-content">
+				<h1>Code</h1>
+				<h3>My Programming Projects</h3>
+				<hr>
+				<p>make projects</p>
+
+				<h3>Flask/Apache Web Server</h3>
+				<hr>
+				<p><b>Goal:</b> A intern web application to visualize wheather data<br>
+				<b>Configuration:</b> <a href="">Flask</a> Web Server connecting to a <a href="">PostgreSQL</a> database.
+				The python based flask application is running on a Apache2 server.<br>
+				<b>Repository:</b> <a href="">meteoNET</a><br>
+				<b>Description:</b>
+				</p>
+
+				<h3>Node.js Web Server</h3>
+				<hr>
+				<p><b>Goal:</b> A web application to help professors with polls<br>
+				<b>Configuration:</b> <a href="">Node.js</a> Web Server connecting to a <a href="">MySQL</a> database.<br>
+				<b>Repository:</b> [private]<br>
+				<b>Description:</b> use case is that
+				</p>
+			</div>
+			<div class="right-content">
+				<div class="edge-dummy"></div>
+				<h1>Quick Overview</h1>
+				<h3>All Projects</h3>
+				<ul>
+					<li>Flask (Python) Web Server</li>
+					<li>Node.js Web Server</li>
+					<li>Raspian Apache</li>
+					<li>UE4 AI Development</li>
+					<li>GitHub Web Page</li>
+				</ul>
+			</div>
 		</div>
-		<div class="right-content">
-			<div class="edge-dummy"></div>
-			<h1>Quick Description</h1>
-			<h3>Programming Languages</h3>
-			<ul>
-				<li>Java</li>
-				<li>JavaScript</li>
-				<li>HTML5</li>
-				<li>CSS3</li>
-				<li>Python</li>
-				<li>C/C++</li>
-			</ul>
-			<h3>Additional Knowledge</h3>
-			<ul>
-				<li>GIMP</li>
-				<li>Blender 3D</li>
-				<li>Word/Excel</li>
-			</ul>
-			<h3>Languages</h3>
-			<ul>
-				<li>English</li>
-				<li>German</li>
-			</ul>
-		</div>
-		<img id="edge" src="./edge.png" height="150" width="150" alt="edge"/>
 	</div>
+
+	<div ng-if="condRendVar == 1">
+		<div class="content mid-content">
+			<div class="left-content">
+				<h1>jojahn</h1>
+				<p>make projects</p>
+			</div>
+			<div class="right-content">
+				<div class="edge-dummy"></div>
+				<h1>Quick Description</h1>
+				<h3>Programming Languages</h3>
+				<ul>
+					<li>Java</li>
+					<li>JavaScript</li>
+					<li>HTML5</li>
+					<li>CSS3</li>
+					<li>Python</li>
+					<li>C/C++</li>
+				</ul>
+				<h3>Additional Knowledge</h3>
+				<ul>
+					<li>GIMP</li>
+					<li>Blender 3D</li>
+					<li>Word/Excel</li>
+				</ul>
+				<h3>Languages</h3>
+				<ul>
+					<li>English</li>
+					<li>German</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div ng-if="condRendVar == 2">
+		<div class="content mid-content">
+			<div class="left-content">
+				<h1>jojahn</h1>
+				<p>make projects</p>
+			</div>
+			<div class="right-content">
+				<div class="edge-dummy"></div>
+				<h1>Quick Description</h1>
+				<h3>Programming Languages</h3>
+				<ul>
+					<li>Java</li>
+					<li>JavaScript</li>
+					<li>HTML5</li>
+					<li>CSS3</li>
+					<li>Python</li>
+					<li>C/C++</li>
+				</ul>
+				<h3>Additional Knowledge</h3>
+				<ul>
+					<li>GIMP</li>
+					<li>Blender 3D</li>
+					<li>Word/Excel</li>
+				</ul>
+				<h3>Languages</h3>
+				<ul>
+					<li>English</li>
+					<li>German</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
 	<div class="content lower-content">
 		<h1>jojahn</h1>
 		<p>make projects</p>
