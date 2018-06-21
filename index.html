@@ -25,8 +25,8 @@
 			display: flex;
 			background-color: white;
 			min-height: 150px;
-			box-shadow: 0 0 20px darkblue;
-			border-bottom: 2px solid darkblue;
+			box-shadow: 0 0 20px rgb(50,50,50);
+			border-bottom: 2px solid black;
 			margin-bottom: 0px;
 		}
 		nav-item {
@@ -40,7 +40,10 @@
 		}
 		nav-item:hover{
 			background-color: white;
-			border-bottom: 2px solid darkblue;
+			border-bottom: 2px solid gray;
+		}
+		nav-item:active {
+			border-bottom: 4px solid darkblue;
 		}
 		.nav-img {
 			display: block;
@@ -92,7 +95,7 @@
 			margin: 0px;
 		}
 		.mid-content {
-			background-color: white;
+			background-color: lightgray;
 			height: 1000px;
 		}
 		.lower-content {
@@ -102,12 +105,15 @@
 		.right-content {
 			order: 1;
 			width: 30%;
-			display: inline-block;
-			background-color: white;
+			display: flex;
+			flex-direction: column;
+			background-color: lightgray;
+			background-image: url('./side.png');
 			height: 100%;
 			margin: 0px;
 			padding: 0px;
-			border: 1px solid white;
+			padding-left: 20px;
+			color: white;
 		}
 		.left-content {
 			order: 0;
@@ -115,16 +121,15 @@
 			height: 100%;
 			display: inline-block;
 			background-color: white;
-			border: 1px solid white;
 		}
 		@media (max-width: 600px){
-			body {
-				color: orange;
-			}
 			nav-item {
 				width: 100%;
 			}
 			nav {
+				flex-direction: column;
+			}
+			.content {
 				flex-direction: column;
 			}
 			.left-content {
@@ -133,7 +138,35 @@
 			.right-content {
 				width: 100%;
 			}
+			.edge-dummy {
+				display: none !important;
+			}
 		}		
+		#edge {
+			position: absolute; 
+			right:0px; 
+			margin-top: -1px;
+		}
+		#edge-gray {
+			position: relative; 
+			margin-top: -120px;
+			float: right;
+		}
+		.edge-dummy {
+			height: 100px;
+			display: block;
+		}
+		h3 {
+			margin-bottom: 0px;
+			margin-top: 0px;
+			color: lightblue;
+			font-weight: bold;
+		}
+		ul {
+			list-style-type: circle;
+		}
+		li {
+		}
 
 	</style>
 </head>
@@ -148,14 +181,33 @@
 		<div class="left-content">
 			<h1>jojahn</h1>
 			<p>make projects</p>
+			<img id="edge-gray" src="./edge_gray_small.png" height="100" width="100" alt="edge"/>
 		</div>
 		<div class="right-content">
-			<img src="./edge.png" height="200" width="200" alt="edge" style="right:0px;" />
+			<div class="edge-dummy"></div>
 			<h1>Quick Description</h1>
+			<h3>Programming Languages</h3>
 			<ul>
-				<li>Major Languages : Java, Python, C#</li>
+				<li>Java</li>
+				<li>JavaScript</li>
+				<li>HTML5</li>
+				<li>CSS3</li>
+				<li>Python</li>
+				<li>C/C++</li>
+			</ul>
+			<h3>Additional Knowledge</h3>
+			<ul>
+				<li>GIMP</li>
+				<li>Blender 3D</li>
+				<li>Word/Excel</li>
+			</ul>
+			<h3>Languages</h3>
+			<ul>
+				<li>English</li>
+				<li>German</li>
 			</ul>
 		</div>
+		<img id="edge" src="./edge.png" height="150" width="150" alt="edge"/>
 	</div>
 	<div class="content lower-content">
 		<h1>jojahn</h1>
