@@ -1,88 +1,160 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>jojahn</title>
+	<title>jojahn@github</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<style>
 		body {
 			padding: 0px;
 			margin: 0px;
-			color:darkblue;
+			color:rgb(50,50,50);
    			font-family: 'Roboto', sans-serif;
 		}
 		header {
 			display: block;
-			height: 20vh;
-			background-color: purple;
+			height: 10vh;
+			background-color: rgb(100,50,150);
+			z-index: 2;
+			background-position: right;
+			background-image: url('./header.png');
+			background-size: 50%;
+    		background-repeat: repeat-x; /* for vertical repeat */
 		}
 		nav {
-			display: block;
-			background-color: red;
-			height: 200px;
-			padding: 10px;
-			box-shadow: 0 0 10px gray;
-			border: 1px solid gray;
+			z-index: 1;
+			display: flex;
+			background-color: white;
+			min-height: 150px;
+			box-shadow: 0 0 20px darkblue;
+			border-bottom: 2px solid darkblue;
 			margin-bottom: 0px;
 		}
 		nav-item {
 			display: inline-block;
-			background-color: orange;
-			height: 200px;
-			min-width: 200px;
+			background-color: white;
+			height: 150px;
+			min-width: 150px;
 			width: 33%;
 			cursor: pointer;
+			border-bottom: 2px solid white;
+		}
+		nav-item:hover{
+			background-color: white;
+			border-bottom: 2px solid darkblue;
+		}
+		.nav-img {
+			display: block;
+			height:150px;
+			width: 150px;
+			margin: auto;
+		}
+		.nav-code-img {
+			order: 0;
+			height: 150px;
+			width: 150px;
+			background: url('./code.png');
+			background-size: 150px 150px;
+		}
+		.nav-code-img:hover {
+			background: url('./code_inv.png');
+			background-size: 150px 150px;
+		}
+		.nav-face-img {
+			order: 1;
+			height: 150px;
+			width: 150px;
+			background: url('./face.png');
+			background-size: 150px 150px;
+		}
+		.nav-face-img:hover {
+			background: url('./face_inv.png');
+			background-size: 150px 150px;
+		}
+		.nav-draw-img {
+			order: 2;
+			height: 150px;
+			width: 150px;
+			background: url('./code.png');
+			background-size: 150px 150px;
+		}
+		.nav-draw-img:hover {
+			background: url('./code_inv.png');
+			background-size: 150px 150px;
 		}
 
 		.content {
 			display: block;
-			background-color: lightblue;
+			background-color: white;
+			display: flex;
 		}
 		.content > h1 {
 			padding: 0px;
 			margin: 0px;
 		}
 		.mid-content {
-			background-color: lightblue;
+			background-color: white;
 			height: 1000px;
 		}
 		.lower-content {
 			background-color: hotpink;
 			height: 1000px;
 		}
-		.left-content {
+		.right-content {
+			order: 1;
 			width: 30%;
 			display: inline-block;
-			background-color: darkblue;
+			background-color: white;
 			height: 100%;
 			margin: 0px;
 			padding: 0px;
-			border: 1px solid purple;
+			border: 1px solid white;
 		}
-		.right-content {
+		.left-content {
+			order: 0;
 			width: 69%;
 			height: 100%;
 			display: inline-block;
-			background-color: blue;
-			border: 1px solid purple;
+			background-color: white;
+			border: 1px solid white;
 		}
-		
+		@media (max-width: 600px){
+			body {
+				color: orange;
+			}
+			nav-item {
+				width: 100%;
+			}
+			nav {
+				flex-direction: column;
+			}
+			.left-content {
+				width: 100%;
+			}
+			.right-content {
+				width: 100%;
+			}
+		}		
+
 	</style>
 </head>
 <body>
 	<header></header>
 	<nav>
-		<nav-item>A</nav-item>
-		<nav-item>B</nav-item>
-		<nav-item>C</nav-item>
+		<nav-item><div class="nav-img nav-code-img"></div></nav-item>
+		<nav-item><div class="nav-img nav-face-img"></div></nav-item>
+		<nav-item><div class="nav-img nav-draw-img"></div></nav-item>
 	</nav>
 	<div class="content mid-content">
-		<div class="right-content">
-			<h1>jojahn</h1>
-			<p>make projects</p>
-		</div>
 		<div class="left-content">
 			<h1>jojahn</h1>
 			<p>make projects</p>
+		</div>
+		<div class="right-content">
+			<img src="./edge.png" height="200" width="200" alt="edge" style="right:0px;" />
+			<h1>Quick Description</h1>
+			<ul>
+				<li>Major Languages : Java, Python, C#</li>
+			</ul>
 		</div>
 	</div>
 	<div class="content lower-content">
