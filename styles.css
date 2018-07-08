@@ -7,7 +7,6 @@
 		}
         h1 {
             font-family: 'Lobster', cursive;
-            text-decoration: underline;
             /*font-family: 'Lucida Console';*/
         }
 		header {
@@ -51,23 +50,17 @@
 			width: 150px;
 			margin: auto;
 		}
-		.nav-code-img {
-			order: 0;
-			height: 150px;
-			width: 150px;
-			background: url('./assets/code.png');
-			background-size: 150px 150px;
+		.code-img {
+			display: inline-block;
 		}
 		.nav-code-img:hover, .nav-code-img-active {
 			background: url('./assets/code_inv.png');
 			background-size: 150px 150px;
 		}
-		.nav-face-img {
-			order: 1;
-			height: 150px;
-			width: 150px;
-			background: url('./assets/face.png');
-			background-size: 150px 150px;
+		.face-img {
+			display:inline-block;
+			margin-right:20px;
+			margin-top:20px;
 		}
 		.nav-face-img:hover, .nav-face-img-active {
 			background: url('./assets/face_inv.png');
