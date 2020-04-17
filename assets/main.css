@@ -2,7 +2,7 @@
   --bg-color: #FFF;
   --bg-sec-color: #EEE;
   --main-color: #2A9D8F;
-  --secondary-color: #E9C46A;
+  --secondary-color: rgb(201, 150, 20);
   --tertiar-color: #264653;
   --font: 'Roboto', sans-serif;
   --highlight-font: 'Roboto', cursive;
@@ -13,6 +13,7 @@ body {
     margin: 0;
     font-family: var(--font);
     color: var(--tertiar-color);
+    font-weight: 100;
 }
 
 h1 {
@@ -28,6 +29,7 @@ h1.name {
 
 h2, h3 {
     color: var(--secondary-color);
+    font-weight: lighter;
 }
 
 #app {
@@ -44,7 +46,7 @@ h2, h3 {
 header {
     height: 25vh;
     width: 100vw;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     display: block;
@@ -66,11 +68,14 @@ header {
     display: block;
     margin: auto;
     padding: 1rem;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 10vh;
+    position: relative;
+    margin-top: -20vh;
+}
+
+@keyframes z-rotation {
+    0% { transform: rotateY(0deg); }
+    5% { transform: rotateY(180deg); }
+    10% { transform: rotateY(0deg); }
 }
 
 a.github {
@@ -80,6 +85,18 @@ a.github {
     right: 2rem;
     text-decoration: none;
     color: var(--tertiar-color);
+    animation-name: z-rotation;
+    animation-duration: 10s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transition: 0.25s;
+}
+
+a.github:hover {
+    background: var(--tertiar-color);
+    color: var(--bg-color);
+    transition: 0.25s;
 }
 
 .emerald {
@@ -91,7 +108,7 @@ a.github {
    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#content:before {
+/* #content:before {
   content: "";
   position: absolute;
   top: -25px;
@@ -112,6 +129,12 @@ a.github {
   border-left: 25vw solid transparent;
   border-right: 25vw solid transparent;
   border-top: 25px solid var(--bg-color);
+} */
+
+.text-link {
+    text-decoration: none;
+    /* background-color: var(--tertiar-color); */
+    color: var(--main-color);
 }
 
 button.contact {
@@ -153,11 +176,22 @@ button.contact.fancy:hover, button.contact.fancy:active, button.contact.fancy:fo
 
 .sections {
     display: flex;
+    margin-top: 1em;
+    flex-direction: column;
 }
 
 .section {
-    width: 33%;
+    width: 100%;
     margin-left: 1rem;
+}
+
+.section-icon {
+    color: var(--main-color);
+    font-size: 5em;
+    margin: auto;
+    display: block !important;
+    position: relative;
+    width: 80px;
 }
 
 .profile-picture {
@@ -173,25 +207,62 @@ button.contact.fancy:hover, button.contact.fancy:active, button.contact.fancy:fo
     background-size: cover;
 }
 
+.project-icons {
+    display: flex;
+    padding: 0.5em;
+    flex-direction: row;
+}
+
+.project {
+    text-align: center;
+    color: var(--secondary-color);
+    cursor: pointer;
+    background-color: var(--sec-color);
+    border: 1px solid var(--sec-color);
+    outline-color: transparent;
+}
+
+.project:hover {
+    color: var(--secondary-color);
+    background-color: var(--bg-sec-color);
+}
+
+.project:focus {
+    color: var(--secondary-color);
+    background-color: var(--bg-sec-color);
+    border: 1px dotted var(--tertiar-color);
+}
+
+.project:active {
+    color: var(--bg-sec-color);
+    background-color: var(--secondary-color);
+}
+
+.project-icon {
+    font-size: 2em;
+    margin: auto;
+    display: block !important;
+    position: relative;
+    width: 32px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background: #11A49B;
-   background: -webkit-linear-gradient(45deg, #11A49B, #90FC8E);
-   background: linear-gradient(45deg, #11A49B, #90FC8E);
+    background: var(--bg-sec-color);
 }
 
 li {
-    color: var(--bg-color);
+    color: var(--tertiar-color);
     display: flex;
     height: 2rem;
 }
 
 li > span.item-text {
     padding: 0.25rem;
-    color: var(--bg-color);
-    border: 1px solid var(--bg-color);
+    color: var(--tertiar-color);
+    border: 1px solid var(--bg-sec-color);
     display: block;
     width: 100%;
     /*background: #11A49B;
@@ -201,10 +272,10 @@ li > span.item-text {
 
 li > span.icon-wrapper {
     padding: 0.25rem;
-    color: var(--bg-color);
+    color: var(--tertiar-color);
     display: block;
     width: 100%;
-    border: 1px solid var(--bg-color);
+    border: 1px solid var(--bg-sec-color);
     /* background: #11A49B; */
     width: 2rem;
     font-size: 1.6rem;
