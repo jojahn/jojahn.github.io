@@ -3,160 +3,26 @@
     <head>
         <meta charset="utf-8">
         <title>jojahn</title>
+
+        <!--
+            dont look at the code,
+                __             _ 
+             /\ \ \___ _ __ __| |
+            /  \/ / _ \ '__/ _` |
+           / /\  /  __/ | | (_| |
+           \_\ \/ \___|_|  \__,_|
+        -->
         
         <!-- custom -->
-        <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-        <link rel="stylesheet" type="text/css" href="assets/main.css" />
-        <script src="assets/main.js"></script>
-        
-        <!-- vuejs -->
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-        <!-- DevIcons -->
-        <link href="//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css" rel="stylesheet">
-        <link href="assets/devicons.min.css" rel="stylesheet">
-        
-        <!-- UI Kit -->
-        <link rel="stylesheet" href="css/uikit.min.css" />
-        <script src="js/uikit.min.js"></script>
-        <script src="js/uikit-icons.min.js"></script>
-
-        <!-- FontAwesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-
-        <!-- Fabric -->
-        <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
+        <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+        <link rel="stylesheet" type="text/css" href="assets/index.css" />
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div id="app" >
-            <header></header>
-            <div id="content">
-                <div class="profile-picture"></div>
-                <h1 class="name">Jonas Jahns</h1>
-                <a href="https://github.com/jojahn" class="github devicons devicons-github_badge" ></a>
-                <a href="https://github.com/jojahn" class="github devicons devicons-github_badge" ></a>
-                <a href="https://github.com/jojahn" class="github devicons devicons-github_badge" ></a>
-                <div class="sections">
-                    <div class="section">
-                        <i class="ms-Icon ms-Icon--Contact section-icon" aria-hidden="true"></i>
-                        <h2>Developer</h2>
-                        <p>Studying computer science at <a href="https://th-rosenheim.de" class="text-link">technical university</a> in Rosenheim, Germany</p>
-                        <p>Working as a student trainee at <a href="https://halvotec.de" class="text-link">Halvotec Information Services</a> for over one year</p>
-                    </div>
-                    <div class="section">
-                        <i class="ms-Icon ms-Icon--Code section-icon" aria-hidden="true"></i>
-                        <h2>My Stack</h2>
-                        <ul class="list">
-                            <li>
-                                <span class="icon-wrapper" ><span class="devicons devicons-java"></span></span>
-                                <span class="item-text">Java</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper"><i class="fab fa-microsoft"></i></span>
-                                <span class="item-text">C#</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><span class="devicons devicons-python"></span></span>
-                                <span class="item-text">Python</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><i class="fab fa-microsoft"></i></span>
-                                <span class="item-text">TypeScript</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><span class="devicons devicons-html5"></span></span>
-                                <span class="item-text">HTML/CSS</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><span class="devicons devicons-javascript_badge"></span></span>
-                                <span class="item-text">JavaScript</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><span class="devicons devicons-react"></span></span>
-                                <span class="item-text">React</span></li>
-                            <li>
-                                <span class="icon-wrapper" ><i class="fab fa-vuejs"></i></span>
-                                <span class="item-text">Vue</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><span class="devicons devicons-mysql" /></span></span>
-                                <span class="item-text">MySQL</span
-                                    ></li>
-                            <li>
-                                <span class="icon-wrapper" ><span class="devicons devicons-google-cloud-platform" /></span></span>
-                                <span class="item-text">Firestore</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><span class="devicons devicons-git_branch" /></span></span>
-                                <span class="item-text">Git</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><i class="fas fa-cube"></i></span>
-                                <span class="item-text">Blender</span>
-                            </li>
-                            <li>
-                                <span class="icon-wrapper" ><i class="fas fa-paint-brush"></i></span>
-                                <span class="item-text">Gimp</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="section">
-                        <i class="ms-Icon ms-Icon--Lightbulb section-icon" aria-hidden="true"></i>
-                        <h2>My Work</h2>
-                        <div class="project-icons">
-                            <button class="project">
-                                <i class="ms-Icon ms-Icon--MachineLearning project-icon" aria-hidden="true"></i>
-                                <p>Graph Stack</p>
-                            </button>
-                            <button class="project">
-                                <i class="ms-Icon ms-Icon--RainShowersDay project-icon" aria-hidden="true"></i>
-                                <p>Metereological Dashboard</p>
-                            </button>
-                            <button class="project">
-                                <i class="ms-Icon ms-Icon--MapLayers project-icon" aria-hidden="true"></i>
-                                <p>LPWAN Device Platform</p>
-                            </button>
-                            <button class="project">
-                                <i class="ms-Icon ms-Icon--Design project-icon" aria-hidden="true"></i>
-                                <p>Desginer Cloud Management</p>
-                            </button>
-                            <button class="project">
-                                <i class="ms-Icon ms-Icon--Product project-icon" aria-hidden="true"></i>
-                                <p>Logistics Dashboard</p>
-                            </button>
-                            <button class="project">
-                                <i class="ms-Icon ms-Icon--MyMoviesTV project-icon" aria-hidden="true"></i>
-                                <p>Movie Review Platform</p>
-                            </button>
-                        </div>
-                        <div class="card">
-                            <h1>StarPilot</h1>
-                            <p>.NET Core WebAPI with GraphQL<br>Flutter Android<br>NEO4J Database</p>
-                            <div class="icons">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h1>Jiraph</h1>
-                            <p>Java Springboot<br>React GraphQL Fetch Client<br></p>
-                            <div class="icons">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h1>meteoNET</h1>
-                            <p>Python Flask<br>Jinja Rendering<br>PostgreSQL</p>
-                            <div class="icons">
-                            </div>
-                        </div>
-                    </div>
-                    <!--<button class="contact fancy" onclick="onContact()">Find me on Github</button>-->
-                </div>
-            </div>
+        <div class="content">
+            <img src="assets/images/favicon.png" alt="jojahn" width="64" height="64">
         </div>
-        <script src="assets/main.js" charset="utf-8" type="text/javascript"></script>
     </body>
 </html>

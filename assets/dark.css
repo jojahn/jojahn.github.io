@@ -1,0 +1,19 @@
+header {
+    background: #1964B3;
+    background: -webkit-linear-gradient(45.34deg, #16AEAF 5.66%, #1964B3 48.62%, #264653 94.35%);
+    background: linear-gradient(45.34deg, #16AEAF 5.66%, #1964B3 48.62%, #264653 94.35%);
+}
+
+:root {
+    --bg-color: #222;
+    --bg-sec-color: #111;
+    --main-color: #F58155;
+    --secondary-color: #F4705B;
+    --tertiar-color: #705b58;
+    --font: 'Roboto', sans-serif;
+    --highlight-font: 'Roboto', cursive;
+}
+
+.section {
+    border-color: #333;
+}
