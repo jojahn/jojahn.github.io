@@ -2,27 +2,64 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>jojahn</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Jonas Jahns</title>
 
         <!--
-            dont look at the code,
-                __             _ 
-             /\ \ \___ _ __ __| |
-            /  \/ / _ \ '__/ _` |
-           / /\  /  __/ | | (_| |
-           \_\ \/ \___|_|  \__,_|
-        -->
+dont look at the code,
+    __             _ 
+    /\ \ \___ _ __ __| |
+/  \/ / _ \ '__/ _` |
+/ /\  /  __/ | | (_| |
+\_\ \/ \___|_|  \__,_|
+-->
+
+        <!-- Social Graph -->
+        <meta property="og:title" content="Jonas Jahns" />
+        <meta property="og:description" content="cross-platform & web ui" />
+        <meta property="og:image" content="assets/images/colors.png" />
+        <meta name="keywords" content="personal website" />
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="assets/images/colors.png"/>
+
+        <!-- Fontawesome -->
+        <script defer src="assets/fontawesome/js/brands.min.js"></script>
+        <script defer src="assets/fontawesome/js/fontawesome.min.js"></script>
         
-        <!-- custom -->
-        <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+        <!-- Custom Styles -->
         <link rel="stylesheet" type="text/css" href="assets/index.css" />
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="content">
-            <img src="assets/images/favicon.png" alt="jojahn" width="64" height="64">
-        </div>
+        <header>
+            <img draggable="false" id="Profile" height="64" width="64" src="assets/images/colors.png">
+            <h1 id="Name">Jonas Jahns</h1>
+            <h2 lable="cross-platform & web ui">UI / Web / Distributed Networks</h2>
+            <h3 class="languages">
+                <span class="fluent">JavaScript, TypeScript,</span>
+                <span class="intermediate">Python, Java,</span>
+                <span class="basic">Kotlin, C/C++/C#, Elixir</span>
+            </h3>
+            <div class="social-links-group alt">
+                <a href="https://github.com/jojahn" class="social-link">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jonas-jahns-4966051a1/" class="social-link">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://www.xing.com/profile/Jonas_Jahns2/cv" class="social-link">
+                    <i class="fa-brands fa-xing"></i>
+                </a>
+                <a href="https://gitlab.com/jojahn" class="social-link">
+                    <i class="fa-brands fa-gitlab"></i>
+                </a>
+            </div>
+        </header>
+        <script src="assets/main.js"></script>
     </body>
 </html>

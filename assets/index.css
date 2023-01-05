@@ -1,22 +1,111 @@
-body {
-    background: #DDD;
-    overflow: hidden;
+:root {
+    --bg-color: #DDD;
+    --text-color: #222;
+    --accent-color: #d50;
 }
 
-.content {
-    margin: auto;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #222;
+        --text-color: #aaa;
+        --accent-color: #d50;
+    }
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
 }
 
-.content
+header {
+    text-align: center;
+    padding-top: 5%;
+}
 
-img {
-    filter: grayscale(100%) brightness(200%) contrast(50%);
-    margin: auto;
+img#Profile {
+    border-radius: 9999px;
+    border: 3px solid #bbb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+}
+
+h1#Name {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    /* melone #FF4E50, #F9D423 */
+    /* grün #00b09b,#96c93d */
+    /* seegrün #11998e,#38ef7d */
+    /* blau #6041ff,#20BDFF,#A5FECB */
+    background: -webkit-linear-gradient(0deg, #FF4E50, #F9D423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+h3 {
+    font-size: 0.9em;
+}
+
+.languages > .intermediate {
+    font-size: 80%;
+}
+
+.languages > .basic {
+    font-size: 70%;
+}
+
+.social-links-group.alt > .social-link > * {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.social-links-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.social-link > * {
+    width: 32px;
+    height: 32px;
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em !important;
+    }
+
+    h2 {
+        font-size: 1.5em !important;
+    }
+
+    h3 {
+        font-size: 1.25em !important;
+    }
+
+    .social-links-group {
+        gap: 35px !important;
+    }
+
+    .social-links-group.alt > .social-link > * {
+        width: 32px !important;
+        height: 32px !important;
+    }
 }
